@@ -1,0 +1,4 @@
+NODE_ENV: qa
+REGION: ap-south-1
+SECRET: user_secrets
+ACCESS_TOKEN_SECRET: 9lqYbPR6p2rB 

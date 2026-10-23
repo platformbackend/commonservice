@@ -1,0 +1,5 @@
+NODE_ENV: production
+REGION: ap-south-1
+BUCKET_PREFIX: wtgames
+SECRET: user_secrets
+ACCESS_TOKEN_SECRET: 9lqYbPR6p2rB 

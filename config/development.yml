@@ -1,0 +1,4 @@
+NODE_ENV: development
+REGION: ap-south-1
+SECRET: user-secrets
+ACCESS_TOKEN_SECRET: 9lqYbPR6p2rB 

@@ -1,0 +1,39 @@
+service: commonServices
+frameworkVersion: "3"
+configValidationMode: warn
+
+custom:
+  serverless_config: ${ssm:/aws/reference/secretsmanager/serverless_config}
+  stage: ${opt:stage, self:provider.stage}
+  region: ${opt:region, "ap-south-1"}
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: ${opt:region, self:custom.region}
+  stage: ${opt:stage, 'development'}
+  architecture: arm64
+
+  tags:
+    Name: ${self:service}
+    ENV: ${self:custom.serverless_config.TAGENV}
+    DOMAIN: PLATFORM
+    GAME: COMMON_GAME
+
+layers:
+  commonServices:
+    name: commonServices
+    path: "./"
+    description: retention for version 2
+    retain: true
+
+
+package:
+  patterns:
+    - "!.git/**"
+    - "!.husky/**"
+  excludeDevDependencies: true
+
+plugins:
+  - serverless-plugin-scripts
+  - serverless-hooks

@@ -1,0 +1,4 @@
+NODE_ENV: qa2
+REGION: us-east-2
+SECRET: user_secrets
+ACCESS_TOKEN_SECRET: 9lqYbPR6p2rB 
